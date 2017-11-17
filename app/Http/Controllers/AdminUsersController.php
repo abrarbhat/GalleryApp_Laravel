@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UsersRequest;
 use Illuminate\Http\Request;
-
+use App\User;
 class AdminUsersController extends Controller
 {
     /**
@@ -14,8 +15,9 @@ class AdminUsersController extends Controller
     public function index()
     {
         //
+    $user = User::all();
 
-        return view('admin.users.index');
+        return view('admin.users.index',compact('user'));
     }
 
     /**
@@ -26,7 +28,7 @@ class AdminUsersController extends Controller
     public function create()
     {
         //
-    return view('admin.user.create');
+    return view('admin.users.create');
     }
 
     /**
@@ -38,6 +40,8 @@ class AdminUsersController extends Controller
     public function store(Request $request)
     {
         //
+
+        return $request->all();
     }
 
     /**

@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/admin','AdminUsersController');
+Route::resource('/admin/users','AdminUsersController');
 
 Route::get('/g',function (){
 
