@@ -12,7 +12,7 @@
 {!! Form::open(['method'=>'POST','action'=>'AdminUsersController@store']) !!}
 <input type="hidden" name="_token" id="csrf-token" value="{{csrf_token() }}" />
 <div class="form-group">
-    <input type="text" name ="title" placeholder ="text">Name<br>
+    <input type="text" name ="name" placeholder ="text">Name<br>
     <input type="text" name ="email" placeholder ="email">Email<br>
     <input type="password" name ="password" placeholder ="password">Password<br>
     <select name="role_id" >
@@ -24,7 +24,7 @@
         <option value="1">Active</option>
         <option value="0">InActive</option>
     </select>Status<br>
-    <input type="file" name="file">
+    <input type="file" name="photo_id">
 
     <input type="submit" name ="submit" value="create User">
 

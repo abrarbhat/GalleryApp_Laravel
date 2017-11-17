@@ -15,6 +15,7 @@
             <thead>
             <tr>
                 <th>ID</th>
+                <th>Photo</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Role</th>
@@ -30,6 +31,7 @@
 
             <tr>
                 <td>{{$us->id}}</td>
+                <td><img height="50" width="50" src="/images/{{$us->photo_id}}"></td>
                 <td>{{$us->name}}</td>
                 <td>{{$us->email}}</td>
                 <td>{{$us->role->name}}</td>
