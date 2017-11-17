@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UsersRequest;
 use App\Photo;
+use App\Role;
 use Illuminate\Http\Request;
 use App\User;
 class AdminUsersController extends Controller
@@ -109,7 +110,12 @@ class AdminUsersController extends Controller
     {
         //
 
-    return view('admin.users.edit');
+        $user =User::findOrFail($id);
+        $roles =Role::pluck('name','id')->all();
+
+        return view('admin.users.edit',compact('user','roles'));
+
+
     }
 
     /**
@@ -122,6 +128,25 @@ class AdminUsersController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $user = new User();
+        $user->name=$request->name;
+        $user->email =$request->email;
+        $user->password=$request->password;
+        $user->role_id=$request->role_id;
+        $user->is_active=$request->is_active;
+        $user->photo_id=$request->photo_id;
+        $user->save();
+
+        $photo = new Photo();
+        $photo->file = $request->photo_id;
+        $photo->save();
+
+
+        return redirect(route('users.index'));
+
+
+
+
     }
 
     /**

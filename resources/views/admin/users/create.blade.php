@@ -5,9 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>create user</title>
 </head>
 <body>
+<h1>create user</h1>
 
 {!! Form::open(['method'=>'POST','action'=>'AdminUsersController@store']) !!}
 <input type="hidden" name="_token" id="csrf-token" value="{{csrf_token() }}" />
@@ -24,7 +25,7 @@
         <option value="1">Active</option>
         <option value="0">InActive</option>
     </select>Status<br>
-    <input type="file" name="photo_id">
+    <input type="file" name="photo_id"><br>
 
     <input type="submit" name ="submit" value="create User">
 
