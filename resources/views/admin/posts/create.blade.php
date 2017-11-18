@@ -17,13 +17,14 @@
     <input type="text" name ="user_id" placeholder ="title">User Id<br>
 
     <select name="category_id" >
-        <option value="0">Select One</option>
-        <option value="1">Admin</option>
-        <option value="2">Author</option>
-        <option value="3">Subscriber</option>
+        <option value="0">languages</option>
+        <option value="1">Php</option>
+        <option value="2">Laravel</option>
+        <option value="3">Javascript</option>
+        <option value="4">bootstrap</option>
     </select>Category<br>
     <input type="file" name="photo_id">Image<br>
-    <textarea name="body" cols="30" rows="10"></textarea>
+    <textarea name="body" cols="30" rows="10"></textarea><br>
     <input type="submit" name ="submit" value="create Posts">
 
 </div>

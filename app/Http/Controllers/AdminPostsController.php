@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -74,6 +75,10 @@ class AdminPostsController extends Controller
     {
         //
 
+        $post = Post::findOrFail($id);
+        $categories =Category::pluck('name','id')->all();
+        return view('admin.posts.edit',compact('post','categories')) ;
+
 
     }
 
@@ -87,6 +92,17 @@ class AdminPostsController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $post = Post::findOrFail($id);
+        $post->title = $request->title;
+        $post->category_id= $request->category_id;
+        $post->photo_id = $request->photo_id;
+        $post->body = $request->body;
+        $post->user_id=$request->user_id;
+        $post->save();//->whereId($id)->first();
+
+        return redirect(route('posts.index'));
+
     }
 
     /**
@@ -98,5 +114,10 @@ class AdminPostsController extends Controller
     public function destroy($id)
     {
         //
+
+        Post::findOrFail($id)->$id;
+        return redirect(route('posts.index'));
+
+
     }
 }

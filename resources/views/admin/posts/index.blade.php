@@ -27,13 +27,13 @@
 
                     <tr>
                         <td>{{$post->id}}</td>
-                        <td>{{$post->user_id}}</td>
-                        <td>{{$post->category_id}}</td>
+                        <td><a href="{{route('posts.edit',$post->id)}}">{{$post->user->name}}</a></td>
+                        <td>{{$post->category ? $post->category->name :"uncategorised"}}</td>
                         <td><img src="/images/{{$post->photo_id}}" alt="" height="50" width="50"></td>
                         <td>{{$post->title}}</td>
                         <td>{{$post->body}}</td>
-                        <td>{{$post->created_at}}</td>
-                        <td>{{$post->updated_at}}</td>
+                        <td>{{$post->created_at->diffForHumans()}}</td>
+                        <td>{{$post->updated_at->diffForHumans()}}</td>
                     </tr>
                 @endforeach
             @endif

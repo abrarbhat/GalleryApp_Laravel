@@ -130,7 +130,7 @@ class AdminUsersController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $user = new User();
+        $user =User::findOrFail($id);
         $user->name=$request->name;
         $user->email =$request->email;
         $user->password=$request->password;
