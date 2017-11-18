@@ -35,6 +35,7 @@
                     <td><a href="{{route('categories.edit',$cat->id)}}">{{$cat->name}}</td>
                     <td>{{$cat->created_at}}</td>
                     <td>{{$cat->updated_at}}</td>
+
                 </tr>
             @endforeach
         @endif
