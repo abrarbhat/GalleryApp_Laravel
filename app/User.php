@@ -38,4 +38,19 @@ public function role()
     }
 
 
+public function isAdmin()
+{
+
+    return true ;
+    //
+//    if($this->role->name =='admin')
+//    {
+//        return true;
+//
+//    }
+//    return false;
+
+
+}
+
 }

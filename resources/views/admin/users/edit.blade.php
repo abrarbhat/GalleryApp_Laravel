@@ -40,6 +40,13 @@
 </div>
 {!! Form::close() !!}
 
+    {!! Form::open(['method'=>'DELETE','action'=>['AdminUsersController@destroy',$user->id]]) !!}
+
+    <input type="submit" name ="submitdel" value="Delete User">
+
+
+    {!! Form::close() !!}
+
 </div>
 
 @include('includes.form_error')
