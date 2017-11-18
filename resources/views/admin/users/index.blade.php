@@ -15,8 +15,6 @@
 
 
     <div class="container">
-        <h2>Condensed Table</h2>
-        <p>The .table-condensed class makes a table more compact by cutting cell padding in half:</p>
         <table class="table table-condensed">
             <thead>
             <tr>
